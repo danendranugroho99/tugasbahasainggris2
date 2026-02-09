@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Moment the Heart Beats Faster During Extreme Fear</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 0; background-color: #111; color: #eee; padding: 20px; }
+  header { text-align: center; padding: 30px 0; }
+  h1 { font-size: 2.5rem; margin-bottom: 0; }
+  .content { max-width: 900px; margin: auto; gap: 40px; }
+  section { margin-bottom: 50px; }
+  #heart { font-size: 100px; text-align: center; color: #db222a; transition: transform 0.2s ease-out; }
+  .slider-label { text-align: center; margin: 10px 0; }
+  input[type=range] { width: 100%; }
+  .box { background: #222; padding: 20px; border-radius: 8px; }
+  footer { text-align: center; margin-top: 60px; font-size: 0.9rem; color: #aaa; }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Moment the Heart Beats Faster During Extreme Fear</h1>
+  <p>An interactive exploration of how fear affects your body.</p>
+</header>
+<div class="content">
+  <section class="box">
+    <div id="heart">❤️</div>
+    <div class="slider-label">Heart Rate: <span id="bpmDisplay">72</span> BPM</div>
+    <input type="range" id="bpmSlider" min="40" max="180" value="72">
+    <p style="font-size:0.9rem; text-align:center;">Move the slider to simulate calm to extreme fear.</p>
+  </section>
+  <section class="box">
+    <h2>1. What Happens in Your Body When You Feel Extreme Fear?</h2>
+    <p>When your brain senses danger—whether real or perceived—it immediately activates your “fight or flight” system. This is your sympathetic nervous system preparing your body to deal with a threat.</p>
+    <ul>
+      <li><b>Brain detects danger:</b> Amygdala sends a signal.</li>
+      <li><b>Adrenaline released:</b> Hormones surge into your bloodstream.</li>
+      <li><b>Heart rate increases:</b> To pump more blood to muscles.</li>
+      <li><b>Breathing gets faster:</b> To bring in more oxygen.</li>
+    </ul>
+  </section>
+  <section class="box">
+    <h2>2. Why Does the Heart Beat Faster?</h2>
+    <p>Your heart speeds up so that your muscles and organs receive oxygen and energy quickly. This helps you respond faster—either to escape or to face a danger.</p>
+    <ol>
+      <li>Adrenaline binds to heart cells.</li>
+      <li>More calcium enters the heart muscle.</li>
+      <li>Heart contraction becomes stronger and quicker.</li>
+    </ol>
+  </section>
+  <section class="box">
+    <h2>3. Normal vs Fear Response Heart Rate</h2>
+    <p>✔️ Calm adult heartbeat: 60–100 BPM</p>
+    <p>💥 During fear: 120–180+ BPM (varies per person)</p>
+  </section>
+  <section class="box">
+    <h2>4. Recovery</h2>
+    <p>After the danger passes, the parasympathetic system helps slow the heart and breathing returns to normal.</p>
+  </section>
+</div>
+<footer>
+  Interactive Article • Preview
+</footer>
+<script>
+  const slider = document.getElementById("bpmSlider");
+  const bpmDisplay = document.getElementById("bpmDisplay");
+  const heart = document.getElementById("heart");
+  slider.oninput = function () {
+    let bpm = this.value;
+    bpmDisplay.textContent = bpm;
+    let scale = 1 + (bpm - 72) / 200;
+    heart.style.transform = `scale(${scale})`;
+    heart.style.transitionDuration = `${0.75 - (bpm / 400)}s`;
+  };
+</script>
+</body>
+</html>
